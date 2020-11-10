@@ -8,14 +8,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Favourite {
 	private String bookID;
 	private String bookTitle;
-	private String bookAuthors[];
-	private String bookPublisher;
-	private String bookPublishedDate;
-	private String bookDescription;
-	private String bookCategory;
-	private String bookImage;
-	private String bookLanguage;
-	private String username;
+	private String bookAuthor;
+	private String bookIsbn;
+	private String userId;
+	public Favourite(String bookID, String bookTitle, String bookAuthor, String bookIsbn, String userId) {
+		super();
+		this.bookID = bookID;
+		this.bookTitle = bookTitle;
+		this.bookAuthor = bookAuthor;
+		this.bookIsbn = bookIsbn;
+		this.userId = userId;
+	}
+	public Favourite() {
+		super();
+	}
 	public String getBookID() {
 		return bookID;
 	}
@@ -28,79 +34,33 @@ public class Favourite {
 	public void setBookTitle(String bookTitle) {
 		this.bookTitle = bookTitle;
 	}
-	public String[] getBookAuthors() {
-		return bookAuthors;
+	public String getBookAuthor() {
+		return bookAuthor;
 	}
-	public void setBookAuthors(String[] bookAuthors) {
-		this.bookAuthors = bookAuthors;
+	public void setBookAuthor(String bookAuthor) {
+		this.bookAuthor = bookAuthor;
 	}
-	public String getBookPublisher() {
-		return bookPublisher;
+	public String getBookIsbn() {
+		return bookIsbn;
 	}
-	public void setBookPublisher(String bookPublisher) {
-		this.bookPublisher = bookPublisher;
+	public void setBookIsbn(String bookIsbn) {
+		this.bookIsbn = bookIsbn;
 	}
-	public String getBookPublishedDate() {
-		return bookPublishedDate;
+	public String getUserId() {
+		return userId;
 	}
-	public void setBookPublishedDate(String bookPublishedDate) {
-		this.bookPublishedDate = bookPublishedDate;
-	}
-	public String getBookDescription() {
-		return bookDescription;
-	}
-	public void setBookDescription(String bookDescription) {
-		this.bookDescription = bookDescription;
-	}
-	public String getBookCategory() {
-		return bookCategory;
-	}
-	public void setBookCategory(String bookCategory) {
-		this.bookCategory = bookCategory;
-	}
-	public String getBookImage() {
-		return bookImage;
-	}
-	public void setBookImage(String bookImage) {
-		this.bookImage = bookImage;
-	}
-	public String getBookLanguage() {
-		return bookLanguage;
-	}
-	public void setBookLanguage(String bookLanguage) {
-		this.bookLanguage = bookLanguage;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public Favourite(String bookID, String bookTitle, String[] bookAuthors, String bookPublisher,
-			String bookPublishedDate, String bookDescription, String bookCategory, String bookImage,
-			String bookLanguage, String username) {
-		super();
-		this.bookID = bookID;
-		this.bookTitle = bookTitle;
-		this.bookAuthors = bookAuthors;
-		this.bookPublisher = bookPublisher;
-		this.bookPublishedDate = bookPublishedDate;
-		this.bookDescription = bookDescription;
-		this.bookCategory = bookCategory;
-		this.bookImage = bookImage;
-		this.bookLanguage = bookLanguage;
-		this.username = username;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	@Override
 	public String toString() {
-		return "Favourite [bookID=" + bookID + ", bookTitle=" + bookTitle + ", bookAuthors="
-				+ Arrays.toString(bookAuthors) + ", bookPublisher=" + bookPublisher + ", bookPublishedDate="
-				+ bookPublishedDate + ", bookDescription=" + bookDescription + ", bookCategory=" + bookCategory
-				+ ", bookImage=" + bookImage + ", bookLanguage=" + bookLanguage + ", username=" + username + "]";
+		return "Favourite [bookID=" + bookID + ", bookTitle=" + bookTitle + ", bookAuthor=" + bookAuthor + ", bookIsbn="
+				+ bookIsbn + ", userId=" + userId + "]";
 	}
 	
 	
 
-
+	}
+	
 
 }
