@@ -1,7 +1,5 @@
 package com.example.model;
 
-import java.util.Arrays;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="favourite")
@@ -62,5 +60,3 @@ public class Favourite {
 
 	}
 	
-
-}
