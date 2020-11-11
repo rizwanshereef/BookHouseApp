@@ -1,4 +1,13 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LayoutModule } from '@angular/cdk/layout';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule,
+  MatToolbarModule,
+} from '@angular/material';
 
 import { MainNavComponent } from './main-nav.component';
 
@@ -6,12 +15,20 @@ describe('MainNavComponent', () => {
   let component: MainNavComponent;
   let fixture: ComponentFixture<MainNavComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MainNavComponent ]
-    })
-    .compileComponents();
-  });
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [MainNavComponent],
+      imports: [
+        NoopAnimationsModule,
+        LayoutModule,
+        MatButtonModule,
+        MatIconModule,
+        MatListModule,
+        MatSidenavModule,
+        MatToolbarModule,
+      ]
+    }).compileComponents();
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainNavComponent);
@@ -19,7 +36,7 @@ describe('MainNavComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should compile', () => {
     expect(component).toBeTruthy();
   });
 });
