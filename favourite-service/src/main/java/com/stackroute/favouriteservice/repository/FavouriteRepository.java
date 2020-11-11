@@ -1,4 +1,4 @@
-package com.stackroute.favouriteservice.model.repository;
+package com.stackroute.favouriteservice.repository;
 
 
 import java.util.*;
