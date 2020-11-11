@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="favourite")
-public class Favourite {
+public class FavouriteBook {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,11 +24,11 @@ public class Favourite {
 	@Column(name="user_id")
 	private String userId;
 
-	public Favourite() {
+	public FavouriteBook() {
 		super();
 	}
 
-	public Favourite(int id, String title, String author_name, String isbn,  String userId) {
+	public FavouriteBook(int id, String title, String author_name, String isbn,  String userId) {
 		super();
 		this.id = id;
 		this.title = title;
