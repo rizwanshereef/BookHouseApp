@@ -1,0 +1,75 @@
+.navbar-brand img
+{
+  height:3em;
+  width:10em;
+}
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  #menuicon{
+    padding-left: 0;
+  }
+/* #mybook{
+  font-size: 20px; color: greenyellow
+} */
+/* #mybook:hover{
+  color: red 
+} */
+#icon{
+  color: rgb(0, 0, 0)
+}
+#icon:hover{
+  color: rgb(0, 0, 0)
+}
+#homepage{
+  color: rgb(13, 14, 13)
+}
+#homepage:hover{
+  color: red
+}
+#menu{
+  color: rgb(0, 0, 0)
+}
+#menu:hover{
+  color: red
+}
+#menuicon{
+  color: rgb(0, 0, 0)
+}
+#menuicon:hover{
+  color:red
+}
+#searchbtn{
+  color: indigo
+}
+#searchbtn:hover{
+  color:black
+}
+#favourite{
+  color: indigo
+}
+#favourite:hover{
+  color:black
+}
+#logout{
+  color: rgb(0, 0, 0)
+}
+#logout:hover{
+  color:red
+}
+#tool{
+  background-color: indigo
+}
+
+.footer{
+  left: 0; bottom: 0; width: 100%;  background-color:rgb(212, 212, 212);
+    color:rgb(0, 0, 0); text-align: center; height:45px;
+    position: fixed
+}
+
+ .menu-spacer {
+  flex: 1 1 auto;
+}
+.fa{
+  padding: 0.5em;
+}
