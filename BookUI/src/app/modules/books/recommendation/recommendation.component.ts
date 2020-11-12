@@ -3,8 +3,6 @@ import { AuthenticationService } from 'src/app/modules/authentication/authentica
 import { RecommendationService } from '../recommendation.service';
 import { MatSnackBar } from '@angular/material';
 import { book } from '../book';
-
-
 @Component({
   selector: 'app-recommendation',
   templateUrl: './recommendation.component.html',
@@ -12,21 +10,18 @@ import { book } from '../book';
 })
 export class RecommendationComponent implements OnInit {
 
-  constructor(private snackbar: MatSnackBar,private Recommendationservice: RecommendationService,private authSerice: AuthenticationService, private authService : AuthenticationService,private viewService: RecommendationService) { }
-
-
-  errorDiv : boolean = false;
+    errorDiv : boolean = false;
   errorMessage : string;
   books: Array<book>;
   afterSearch: boolean;
   bookList: any = [];
   
-
+  constructor(private snackbar: MatSnackBar,private recommendationservice: RecommendationService,private authSerice: AuthenticationService, private authService : AuthenticationService,private viewService: RecommendationService) { }
 
   ngOnInit() {
     this.bookList = new Array<any>();
     console.log(this.authSerice.user);
-    this.Recommendationservice.getRecommendation(this.authSerice.user).subscribe(
+    this.recommendationservice.getRecommendations(this.authSerice.user).subscribe(
       data => {
         console.log(this.authSerice.user);
         console.log(data);
@@ -43,11 +38,11 @@ export class RecommendationComponent implements OnInit {
     this.snackbar.open(message, '', {
       duration:1000
     });
-    this.Recommendationservice.deleteFromRecommendationList(book).subscribe((book)=>{
+    this.recommendationservice.deleteFromRecommendationList(book).subscribe((book)=>{
       console.log("deleted");
     });
     const index = this.bookList.indexOf(book);
     this.bookList.splice(index,1);
   }
-
 }
+
