@@ -3,25 +3,17 @@ package com.stackroute.favouriteservice.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="favourite")
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection ="favourite")
 public class FavouriteBook {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	
 	private int id;
-	
-	@Column(name="title")
 	private String title;
-	
-	@Column(name = "author_name")
 	private String author_name;
-	
-	@Column(name = "isbn")
 	private String isbn;
-	
-	@Column(name="user_id")
 	private String userId;
 
 	public FavouriteBook() {
