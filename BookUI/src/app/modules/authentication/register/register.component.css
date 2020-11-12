@@ -25,7 +25,6 @@ a:hover{
 .container{
     display: block; text-align: center; 
     width: 80%;
-    /* height: 60%; */
     margin: 20px auto 0 auto;
     box-sizing: border-box;
     border: 5px solid rgb(54, 51, 51);
