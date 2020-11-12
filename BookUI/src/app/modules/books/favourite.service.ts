@@ -11,9 +11,9 @@ const httpOptions = {
 
 @Injectable()
 export class FavouriteService{
-  saveUrl: string = "http://localhost:9898/api/bookservice/book";
-  getUrl: string = "http://localhost:9898/api/bookservice/books/";
-delUrl: string="http://localhost:9898/api/bookservice/book/";
+  saveUrl: string = "http://localhost:9898/api/favouritebookservice/book";
+  getUrl: string = "http://localhost:9898/api/favouritebookservice/books/";
+delUrl: string="http://localhost:9898/api/favouritebookservice/book/";
     constructor(private http: HttpClient) { }
     
     getBooks(apiUrl): Observable<any> {
