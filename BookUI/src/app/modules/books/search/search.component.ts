@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { book } from '../book';
 import { FavouriteService } from '../favourite.service';
+import { RecommendationService } from '../recommendation.service';
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { MatSnackBar } from '@angular/material';
 
@@ -27,13 +28,22 @@ export class SearchComponent implements OnInit {
   modifiedList = [];
   book: book;
   isFavourite: boolean;
+  isRecommendation: boolean;
   selectedCategory: any;
   categories = ['author', 'title', 'any']
   
-  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private authSerice: AuthenticationService) { }
+  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private authSerice: AuthenticationService,private recommendationservice: RecommendationService) { }
 
   ngOnInit() {
     this.favouriteservice.getFavourites(this.authSerice.user).subscribe(
+      data => {
+        console.log(data);
+        if (data.length > 0) {
+          this.dbBookList = data;
+        }
+      }
+    );
+    this.recommendationservice.getRecommendation(this.authSerice.user).subscribe(
       data => {
         console.log(data);
         if (data.length > 0) {
@@ -110,6 +120,23 @@ export class SearchComponent implements OnInit {
 
   favourite(book){
     let message=`${book.title} add to favourites`;
+    console.log(book);
+    console.log(this.authSerice.user);
+      let saveBook = {
+      title: book.title,
+      author_name: book.author_name[0],
+      isbn: book.isbn[0],
+    };
+    this.favouriteservice.saveBook(saveBook).subscribe(book=>{
+      console.log("book saved");
+      this.snackbar.open(message, '', {
+        duration:1000
+      });
+    })
+  }
+
+  recommendation(book){
+    let message=`${book.title} add to recommendation`;
     console.log(book);
     console.log(this.authSerice.user);
       let saveBook = {

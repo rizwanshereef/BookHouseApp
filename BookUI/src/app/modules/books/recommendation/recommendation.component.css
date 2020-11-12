@@ -2,10 +2,9 @@ h3{
     text-align: center;color:grey
 }
 .book-thumbnail{
-    width:250px; height: 390px;
+    width:250px; height: 130px;
     margin:10px;
-    padding: 2.3em;
-    
+    /* padding: 0; */
 }
 h4{
     margin: 0px
@@ -18,17 +17,15 @@ h4{
 .book-actions{
     text-align: right;
 }
+
 .book-container{
     margin:auto;
     width: 90vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: rgb(0, 66, 128)
-    /* height:80vh; */
-  
+    height:100vh;
 }
-.header{
-    text-align: center;
-    color: Red;
+.search-block{
+ margin: 10px;
 }
