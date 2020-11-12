@@ -17,6 +17,10 @@ h4{
 .book-actions{
     text-align: right;
 }
+.book
+{
+    text-align: right;
+}
 .book-container{
     margin:auto;
     width: 90vw;
