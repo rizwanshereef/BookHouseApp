@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "MyBooks"
+  "defaultProject": "MyBooks",
+  "cli": {
+    "analytics": false
+  }
 }
