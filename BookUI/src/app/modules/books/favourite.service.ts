@@ -32,7 +32,7 @@ delUrl: string="http://localhost:9898/api/favouritebookservice/book/";
     }
 
     getMyFavourites(): Observable<Array<book>>{
-      return this.http.get<Array<book>>("http://localhost:9898/api/bookservice/books");
+      return this.http.get<Array<book>>("http://localhost:9898/api/favouritebookservice/books");
   }
 
     deleteFromFavouriteList(book:book){
