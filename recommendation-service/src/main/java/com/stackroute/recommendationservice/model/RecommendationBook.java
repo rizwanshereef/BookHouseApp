@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class RecommendationBook {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
 	private String title;
