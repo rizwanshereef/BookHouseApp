@@ -20,6 +20,10 @@ import { FavouriteService } from './modules/books/favourite.service';
 import { FavouriteComponent } from './modules/books/favourite/favourite.component';
 import { RecommendationComponent } from './modules/books/recommendation/recommendation.component';
 import { RecommendationService } from './modules/books/recommendation.service';
+
+import { RecommendedbyothersComponent } from './modules/books/recommendedbyothers/recommendedbyothers.component';
+import { RecommendedbyothersService } from './modules/books/recommendedbyothers.service';
+
 import { TokenInterceptor } from './modules/books/interceptor.service';
 import { SearchComponent } from 'src/app/modules/books/search/search.component';
 import { MainNavComponent } from './main-nav/main-nav.component';

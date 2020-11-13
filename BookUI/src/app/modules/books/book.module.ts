@@ -15,9 +15,10 @@ import { FavouriteService } from './favourite.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
+import { RecommendedbyothersComponent } from './recommendedbyothers/recommendedbyothers.component';
 
 @NgModule({
-  declarations: [DashboardComponent,FavouriteComponent, RecommendationComponent],
+  declarations: [DashboardComponent,FavouriteComponent, RecommendationComponent, RecommendedbyothersComponent],
   imports: [
     CommonModule, HttpClientModule, AppRoutingModule, MatCardModule,
     MatButtonModule,MatSnackBarModule,MatDialogModule, 

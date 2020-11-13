@@ -17,16 +17,9 @@
             <div fxShow="true" fxHide.lt-md>
             <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Homepage</button>
             <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['favourite']" id="homepage">My Favourite Books</button>
+            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['recommendation']" id="homepage">My Recommendations</button>
+            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['recommendedbyothers']" id="homepage">Recommended by others</button>
             <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/search']" id="homepage">Search Books</button>
-            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/recommendation']" id="homepage">Recommendation</button>
-            
-            <!-- <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [matMenuTriggerFor]="menu" id="menu">Menu -->
-            <!-- <mat-icon id="menuicon">more_vert</mat-icon> -->
-            <!-- </button> -->
-            <!-- <mat-menu #menu="matMenu" id="dropdownmenu">
-                <button mat-menu-item  [routerLink]="['/search']" id="searchbtn">Search books</button>
-                <button mat-menu-item [routerLink]="['/favourite']" id="favourite">My Favourite Books</button>
-            </mat-menu>   -->
             <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>
             </div>
             </mat-toolbar-row>
@@ -42,6 +35,9 @@
                     <mat-menu #menu="matMenu">
                         <button class="searchbtn" mat-menu-item [routerLink]="['/search']" id="searchbtn">Search books</button>
                         <button mat-menu-item  [routerLink]="['/favourite']" id="favourite">My Favourite Books</button>
+                        <button mat-menu-item  [routerLink]="['/recommendation']" id="recommendation">My Recommendations</button>
+                        <button mat-menu-item  [routerLink]="['/recommendedbyothers']" id="recommendedbyothers">Recommended By Others</button>
+                        
                     </mat-menu>
                     <button  *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>          
             </mat-nav-list>

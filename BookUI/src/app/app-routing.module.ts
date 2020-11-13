@@ -5,6 +5,8 @@ import { DashboardComponent } from './modules/books/dashboard/dashboard.componen
 import { FavouriteComponent } from './modules/books/favourite/favourite.component';
 import { SearchComponent } from './modules/books/search/search.component';
 import { RecommendationComponent } from './modules/books/recommendation/recommendation.component';
+import { RecommendedbyothersComponent } from './modules/books/recommendedbyothers/recommendedbyothers.component';
+
 
 const routes: Routes = [
   {
@@ -31,6 +33,13 @@ const routes: Routes = [
         component: RecommendationComponent,
         canActivate : [AuthguardService]
       },
+
+      {
+        path: 'recommendedbyothers',
+        component: RecommendedbyothersComponent,
+        canActivate : [AuthguardService]
+      },
+
       {
         path: 'search',
         component: SearchComponent,
