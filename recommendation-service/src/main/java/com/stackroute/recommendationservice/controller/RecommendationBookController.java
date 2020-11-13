@@ -88,4 +88,14 @@ public class RecommendationBookController {
 		return new ResponseEntity<List<RecommendationBook>>(recommendationbookservice.getMyRecommendationBooks(userId),HttpStatus.OK);
 	}
 	
+	@GetMapping("/allbooks")
+	public @ResponseBody ResponseEntity<List<RecommendationBook>> getAllBooks(ServletRequest req, ServletResponse res){
+		HttpServletRequest request=(HttpServletRequest) req;
+		String authHeader=request.getHeader("authorization");
+		String token=authHeader.substring(7);
+		String userId=Jwts.parser().setSigningKey("secretkey").parseClaimsJws(token).getBody().getSubject();
+		return new ResponseEntity<List<RecommendationBook>>(recommendationbookservice.getAllRecommendationBooks(),HttpStatus.OK);
+	}
+	
+	
 }

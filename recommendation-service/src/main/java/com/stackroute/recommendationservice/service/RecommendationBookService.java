@@ -16,4 +16,7 @@ public interface RecommendationBookService {
 
 	boolean saveFavouriteBook(RecommendationBook recommendationbook) throws RecommendationBookAlreadyExistsException;
 
+	List<RecommendationBook> getAllRecommendationBooks();
+
+
 }

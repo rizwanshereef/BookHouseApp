@@ -53,5 +53,11 @@ public class RecommendationBookServiceImpl implements RecommendationBookService 
 	public List<RecommendationBook> getMyRecommendationBooks(String userId) {
 		return recommendationbookrepository.findByUserId(userId);
 	}
+	
+	@Override
+	public List<RecommendationBook> getAllRecommendationBooks(){
+		return recommendationbookrepository.findAll();
+		
+	}
 
 }
