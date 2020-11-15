@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.stackroute.recommendationservice.service.SequenceGeneratorService;
 import com.stackroute.recommendationservice.exception.RecommendationBookAlreadyExistsException;
 import com.stackroute.recommendationservice.exception.RecommendationBookNotFoundException;
 import com.stackroute.recommendationservice.model.RecommendationBook;
@@ -25,6 +26,9 @@ public class RecommendationBookController {
 	@Autowired
 	private RecommendationBookService recommendationbookservice;
 	
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
+	
 	//< - - Save Method - - >
 	@PostMapping("/book")
 	public ResponseEntity<?> saveNewMovie(@RequestBody RecommendationBook recommendationbook,
@@ -35,6 +39,7 @@ public class RecommendationBookController {
 		String userId=Jwts.parser().setSigningKey("secretkey").parseClaimsJws(token).getBody().getSubject();
 		System.out.println("userId: "+userId);		
 		try{
+			recommendationbook.setId(sequenceGeneratorService.generateSequence(RecommendationBook.SEQUENCE_NAME));
 			recommendationbook.setUserId(userId);
 			recommendationbookservice.saveFavouriteBook(recommendationbook);
 		}

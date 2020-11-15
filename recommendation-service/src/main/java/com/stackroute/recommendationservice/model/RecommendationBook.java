@@ -7,9 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection ="recommendation")
 public class RecommendationBook {
 
+	
+	@Transient
+	public static final String SEQUENCE_NAME= "users_sequence";
+	
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	
 	private String title;
 	private String author_name;
@@ -29,11 +33,11 @@ public class RecommendationBook {
 		this.userId = userId;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
