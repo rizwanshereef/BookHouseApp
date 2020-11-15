@@ -16,6 +16,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { RecommendedbyothersComponent } from './recommendedbyothers/recommendedbyothers.component';
+import { RecommendationService } from 'src/app/modules/books/recommendation.service';
+import { RecommendedbyothersService } from 'src/app/modules/books/recommendedbyothers.service';
+
 
 @NgModule({
   declarations: [DashboardComponent,FavouriteComponent, RecommendationComponent, RecommendedbyothersComponent],
@@ -26,9 +29,9 @@ import { RecommendedbyothersComponent } from './recommendedbyothers/recommendedb
     ReactiveFormsModule, MatFormFieldModule,MatIconModule
   ],
   // entryComponents:[MovieDialogComponent],
-  exports:[AppRoutingModule, DashboardComponent,FavouriteComponent 
+  exports:[AppRoutingModule, DashboardComponent,FavouriteComponent,RecommendedbyothersComponent,RecommendationComponent
     
   ],
-  providers:[FavouriteService,],
+  providers:[FavouriteService,RecommendationService,RecommendedbyothersService],
 })
 export class BookModule { }

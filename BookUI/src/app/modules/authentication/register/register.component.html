@@ -35,6 +35,15 @@
       </mat-form-field>
 
       <!-- <mat-form-field class="register-input-full-width" appearance="outline">
+        <input type="password" [(ngModel)]="newUser.confirmpassword" name="confirmpassword" placeholder="Confirm Password" class="register-input-full-width" required #confirmpassword="ngModel" pattern="{{ password.value }}" />
+        <div *ngIf=" confirmpassword.invalid && (newUser.submitted || confirmpassword.touched)" class="alert alert-danger">
+          <div *ngIf="confirmpassword.errors.required"> Confirm password is required. </div>
+          <div *ngIf="confirmpassword.errors.pattern"> Password & Confirm Password does not match.</div>
+          <mat-icon matSuffix><i class="material-icons">lock</i></mat-icon>
+        </div>
+      </mat-form-field> -->
+
+      <!-- <mat-form-field class="register-input-full-width" appearance="outline">
         <mat-label *ngIf="f.confirm_password.touched && f.confirm_password.invalid">Confirm Password</mat-label>
         <input TYPE="confirmpassword" id="confirmpassword" class="inputPass" matInput placeholder="Confirm Password" [(ngModel)]="newUser.confirmpassword" name="confirm password" required>
         <mat-icon matSuffix><i class="material-icons">lock</i></mat-icon>

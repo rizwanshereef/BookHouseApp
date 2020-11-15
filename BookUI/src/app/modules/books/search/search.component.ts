@@ -32,10 +32,10 @@ export class SearchComponent implements OnInit {
   selectedCategory: any;
   categories = ['author', 'title', 'any']
   
-  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private recommendationservice: RecommendationService,private authSerice: AuthenticationService) { }
+  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private recommendationservice: RecommendationService,private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.favouriteservice.getFavourites(this.authSerice.user).subscribe(
+    this.favouriteservice.getFavourites(this.authService.user).subscribe(
       data => {
         console.log(data);
         if (data.length > 0) {
@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
         }
       }
     );
-    this.recommendationservice.getRecommendations(this.authSerice.user).subscribe(
+    this.recommendationservice.getRecommendations(this.authService.user).subscribe(
       data => {
         console.log(data);
         if (data.length > 0) {
@@ -125,7 +125,7 @@ export class SearchComponent implements OnInit {
   favourite(book){
     let message=`${book.title} add to favourites`;
     console.log(book);
-    console.log(this.authSerice.user);
+    console.log(this.authService.user);
       let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
@@ -142,7 +142,7 @@ export class SearchComponent implements OnInit {
   recommendation(book){
     let message=`${book.title} add to Recommendation`;
     console.log(book);
-    console.log(this.authSerice.user);
+    console.log(this.authService.user);
       let saveBook = {
       title: book.title,
       author_name: book.author_name[0],

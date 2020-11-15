@@ -12,20 +12,19 @@ const httpOptions = {
 @Injectable()
 export class RecommendedbyothersService {
 
-  // saveUrl: string = "http://localhost:9899/api/recommendationbookservice/book";
+  saveUrl: string = "http://localhost:9899/api/recommendationbookservice/book";
   getUrl: string = "http://localhost:9899/api/recommendationbookservice/allbooks/";
-// delUrl: string="http://localhost:9899/api/recommendationbookservice/book/";
+  delUrl: string="http://localhost:9899/api/recommendationbookservice/book/";
 
   constructor(private http: HttpClient) { }
   getBooks(apiUrl): Observable<any> {
     return this.http.get<any>(apiUrl);
   }
 
-
-  // saveBook(saveBook){
-  //   console.log(saveBook);
-  //   return this.http.post(this.saveUrl, saveBook);
-  // }
+  saveBook(saveBook){
+    console.log(saveBook);
+    return this.http.post(this.saveUrl, saveBook);
+  }
 
   
   getRecommendations(userId): Observable<any> {
@@ -36,10 +35,10 @@ export class RecommendedbyothersService {
     return this.http.get<Array<book>>("http://localhost:9899/api/recommendationbookservice/allbooks");
 }
 
-//   deleteFromRecommendationList(book:book){
-//     console.log(book);
+  deleteFromRecommendationList(book:book){
+    console.log(book);
     
-//     return this.http.delete(this.delUrl+book.id);
-// }
+    return this.http.delete(this.delUrl+book.id);
+}
   
 }

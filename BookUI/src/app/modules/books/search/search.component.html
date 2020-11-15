@@ -31,9 +31,8 @@
           <button mat-raised-button color="primary" [ngStyle]="{'display':book.isFavourite?'block':'none'}" (click)="favourite(book)">Add to favourites</button>
           <button button mat-raised-button disabled color="primary" [ngStyle]="{'display':!book.isFavourite?'block':'none'}" (click)="favourite(book)">In your favourite list</button>
 
-          <!-- <button mat-raised-button color="primary" [ngStyle]="{'display':book.isRecommendation?'block':'none'}" (click)="recommendation(book)">Add to recommendations</button>
-          <button button mat-raised-button disabled color="primary" [ngStyle]="{'display':!book.isRecommendation?'block':'none'}" (click)="recommendation(book)">In your recommendation list</button> -->
 
+          
         </mat-card-actions>
         <mat-card-actions class="book">
 
