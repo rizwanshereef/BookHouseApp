@@ -8,9 +8,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection ="favourite")
 public class FavouriteBook {
 
+	
+	@Transient
+	public static final String SEQUENCE_NAME= "users_sequence";
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private long id;
+	
 	private String title;
 	private String author_name;
 	private String isbn;
@@ -29,12 +33,12 @@ public class FavouriteBook {
 		this.userId = userId;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(long l) {
+		this.id = l;
 	}
 
 	public String getTitle() {

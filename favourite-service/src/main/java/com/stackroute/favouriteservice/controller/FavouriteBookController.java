@@ -14,6 +14,7 @@ import com.stackroute.favouriteservice.exception.FavouriteBookAlreadyExistsExcep
 import com.stackroute.favouriteservice.exception.FavouriteBookNotFoundException;
 import com.stackroute.favouriteservice.model.FavouriteBook;
 import com.stackroute.favouriteservice.service.FavouriteBookService;
+import com.stackroute.favouriteservice.service.SequenceGeneratorService;
 
 import io.jsonwebtoken.Jwts;
 
@@ -24,6 +25,8 @@ public class FavouriteBookController {
 	
 	@Autowired
 	private FavouriteBookService favouritebookservice;
+	@Autowired
+	private SequenceGeneratorService sequenceGeneratorService;
 	
 	//< - - Save Method - - >
 	@PostMapping("/book")
@@ -33,9 +36,10 @@ public class FavouriteBookController {
 		String authHeader=request.getHeader("authorization");
 		String token=authHeader.substring(7);
 		String userId=Jwts.parser().setSigningKey("secretkey").parseClaimsJws(token).getBody().getSubject();
-		System.out.println("userId: "+userId);		
+		System.out.println("userId: "+userId);	
 		try{
 			favouritebook.setUserId(userId);
+			favouritebook.setId(sequenceGeneratorService.generateSequence(FavouriteBook.SEQUENCE_NAME));
 			favouritebookservice.saveFavouriteBook(favouritebook);
 		}
 		catch(FavouriteBookAlreadyExistsException e){

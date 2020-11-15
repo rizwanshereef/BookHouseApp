@@ -20,6 +20,7 @@ public class FavouriteBookServiceImpl implements FavouriteBookService {
 
 	@Override
 	public boolean saveFavouriteBook(FavouriteBook favouritebook) throws FavouriteBookAlreadyExistsException {
+		System.out.println(favouritebook.getId());
 		Optional<FavouriteBook> obj=favouritebookrepository.findById(favouritebook.getId());
 		if(obj.isPresent()){
 		throw new FavouriteBookAlreadyExistsException("Book already exists, cannot be saved");
