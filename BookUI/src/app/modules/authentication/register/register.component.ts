@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material';
 export class RegisterComponent implements OnInit {
   newUser: user;
   error: any;
-
+ confirmpassword:any;
   constructor(private snackbar: MatSnackBar,private authService: AuthenticationService, private router: Router) {
     this.newUser=new user();
   }

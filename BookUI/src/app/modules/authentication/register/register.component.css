@@ -33,6 +33,12 @@ a:hover{
     font-size: 14px;  box-shadow: 5px 10px #888888;
     /* background-position: fixed;  */
 }
+.abc
+{
+    color: red;
+    padding-top: 0%;
+    border: 0%;
+}
 h6{
     margin-bottom: 0
 }
