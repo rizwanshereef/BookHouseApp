@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RecommendedbyothersComponent } from './recommendedbyothers.component';
 
 describe('RecommendedbyothersComponent', () => {
@@ -8,9 +7,9 @@ describe('RecommendedbyothersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecommendedbyothersComponent ]
+      declarations: [RecommendedbyothersComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

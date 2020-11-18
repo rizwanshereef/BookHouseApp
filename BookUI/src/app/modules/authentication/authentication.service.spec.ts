@@ -1,7 +1,6 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TestBed, inject, fakeAsync } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-
 import { AuthenticationService } from './authentication.service';
 import { Observable } from 'rxjs';
 

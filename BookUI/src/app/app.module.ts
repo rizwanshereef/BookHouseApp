@@ -52,7 +52,7 @@ const appRoutes: Routes=[{
     MatSidenavModule, MatMenuModule,
     MatListModule, BookModule,FlexLayoutModule
     ],
-  providers: [AuthenticationService,AuthguardService,RecommendationService, FavouriteService,
+  providers: [AuthenticationService,AuthguardService,RecommendationService, RecommendedbyothersService, FavouriteService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
