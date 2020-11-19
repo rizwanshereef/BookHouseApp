@@ -1,4 +1,4 @@
- import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { Location } from '@angular/common';
@@ -36,13 +36,13 @@ fdescribe('LoginComponent', () => {
 
   class AuthServiceStub {
     currentUser: any;
-    
+
     constructor() {
 
-     }
+    }
 
     login(credentials) {
-      if(credentials.userId == testConfig.userData.userId) {
+      if (credentials.userId == testConfig.userData.userId) {
         console.log('data:::', this.currentUser);
         return credentials.userId;
       } else {
@@ -57,16 +57,16 @@ fdescribe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       imports: [FormsModule, MatFormFieldModule, MatInputModule, MatIconModule,
         MatButtonModule, BrowserAnimationsModule, HttpClientModule,
         RouterTestingModule.withRoutes(
-          [{path: '', component: dummy}]
+          [{ path: '', component: dummy }]
         )
       ],
-      providers: [{provide: AuthenticationService, useClass: AuthServiceStub}]
+      providers: [{ provide: AuthenticationService, useClass: AuthServiceStub }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

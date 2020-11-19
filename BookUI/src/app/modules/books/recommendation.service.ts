@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { book } from './book';
 
 const httpOptions = {
@@ -8,11 +8,11 @@ const httpOptions = {
     'Content-Type': 'application/json'
   })
 };
-@Injectable() 
+@Injectable()
 export class RecommendationService {
   saveUrl: string = "http://localhost:9899/api/recommendationbookservice/book";
   getUrl: string = "http://localhost:9899/api/recommendationbookservice/books/";
-delUrl: string="http://localhost:9899/api/recommendationbookservice/book/";
+  delUrl: string = "http://localhost:9899/api/recommendationbookservice/book/";
 
   constructor(private http: HttpClient) { }
   getBooks(apiUrl): Observable<any> {
@@ -20,24 +20,24 @@ delUrl: string="http://localhost:9899/api/recommendationbookservice/book/";
   }
 
 
-  saveBook(saveBook){
+  saveBook(saveBook) {
     console.log(saveBook);
     return this.http.post(this.saveUrl, saveBook);
   }
 
-  
+
   getRecommendations(userId): Observable<any> {
     return this.http.get<any>(this.getUrl);
   }
 
-  getMyRecommendations(): Observable<Array<book>>{
+  getMyRecommendations(): Observable<Array<book>> {
     return this.http.get<Array<book>>("http://localhost:9899/api/recommendationbookservice/books");
-}
+  }
 
-  deleteFromRecommendationList(book:book){
+  deleteFromRecommendationList(book: book) {
     console.log(book);
-    
-    return this.http.delete(this.delUrl+book.id);
-}
-  
+
+    return this.http.delete(this.delUrl + book.id);
+  }
+
 }

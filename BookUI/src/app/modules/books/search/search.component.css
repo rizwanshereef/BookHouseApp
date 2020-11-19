@@ -1,26 +1,31 @@
-h3{
+h3
+{
     text-align: center;color:grey
 }
-.book-thumbnail{
+.book-thumbnail
+{
     width:250px;
     margin:10px;
 }
-h4{
+h4
+{
     margin: 0px
 }
-.book-image{
+.book-image
+{
     height: 300px;
     width: 250px;
 }
-
-.book-actions{
+.book-actions
+{
     text-align: right;
 }
 .book
 {
     text-align: right;
 }
-.book-container{
+.book-container
+{
     margin:auto;
     width: 90vw;
     display: flex;
@@ -28,9 +33,11 @@ h4{
     flex-direction: row;
     height:100vh;
 }
-.search-block{
+.search-block
+{
  margin: 10px;
 }
-p{
+p
+{
     color:rgb(92, 92, 138)
 }

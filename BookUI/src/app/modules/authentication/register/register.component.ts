@@ -14,41 +14,42 @@ import { MatSnackBar } from '@angular/material';
 export class RegisterComponent implements OnInit {
   newUser: user;
   error: any;
- confirmpassword:any;
-  constructor(private snackbar: MatSnackBar,private authService: AuthenticationService, private router: Router) {
-    this.newUser=new user();
+  confirmpassword: any;
+  constructor(private snackbar: MatSnackBar, private authService: AuthenticationService, private router: Router) {
+    this.newUser = new user();
   }
 
   ngOnInit() {
   }
 
-  registerUser(){
-    this.authService.registerUser(this.newUser).subscribe((data)=>{
+  registerUser() {
+    this.authService.registerUser(this.newUser).subscribe((data) => {
       console.log("user data: ", data);
       this.snackbar.open(data, '', {
-        duration:5000
+        duration: 5000
       });
       this.router.navigate(['/login']);
     },
-    error => {
-      this.error = error;
-      if (this.error.status = 409) {
-        this.error = "User already exists, cannot be saved";
-        console.log(this.error);
-        this.snackbar.open(this.error, '', {
-          duration:5000
-        });
-      }
-      if (this.error.status = 500) {
-        this.error = "Internal Server Error";
-        console.log(this.error);
-        this.snackbar.open(this.error, '', {
-          duration:5000
-        });
-      }});
+      error => {
+        this.error = error;
+        if (this.error.status = 409) {
+          this.error = "User already exists, cannot be saved";
+          console.log(this.error);
+          this.snackbar.open(this.error, '', {
+            duration: 5000
+          });
+        }
+        if (this.error.status = 500) {
+          this.error = "Internal Server Error";
+          console.log(this.error);
+          this.snackbar.open(this.error, '', {
+            duration: 5000
+          });
+        }
+      });
   }
 
-  resetInput(registerForm: NgForm){
+  resetInput(registerForm: NgForm) {
     registerForm.reset();
   }
 

@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { book } from '../book';
@@ -30,11 +29,11 @@ export class SearchComponent implements OnInit {
   modifiedList = [];
   book: book;
   isFavourite: boolean;
-  isRecommendation:boolean;
+  isRecommendation: boolean;
   selectedCategory: any;
   categories = ['author', 'title', 'any']
-  
-  constructor(private snackbar: MatSnackBar,private recommendationservice: RecommendationService,private fb: FormBuilder,private favouriteservice: FavouriteService,private authSerice: AuthenticationService) { }
+
+  constructor(private snackbar: MatSnackBar, private recommendationservice: RecommendationService, private fb: FormBuilder, private favouriteservice: FavouriteService, private authSerice: AuthenticationService) { }
 
   ngOnInit() {
     this.favouriteservice.getFavourites(this.authSerice.user).subscribe(
@@ -113,7 +112,7 @@ export class SearchComponent implements OnInit {
         author_name: obj.author_name,
         isbn: obj.isbn,
         isFavourite: true,
-        isRecommendation:true,
+        isRecommendation: true,
 
         key: obj.key,
       };
@@ -123,35 +122,35 @@ export class SearchComponent implements OnInit {
   }
 
 
-  favourite(book){
-    let message=`${book.title} add to favourites`;
+  favourite(book) {
+    let message = `${book.title} add to favourites`;
     console.log(book);
     console.log(this.authSerice.user);
-      let saveBook = {
+    let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
       isbn: book.isbn[0],
     };
-    this.favouriteservice.saveBook(saveBook).subscribe(book=>{
+    this.favouriteservice.saveBook(saveBook).subscribe(book => {
       console.log("book saved");
       this.snackbar.open(message, '', {
-        duration:1000
+        duration: 1000
       });
     })
   }
-  recommendation(book){
-    let message=`${book.title} add to Recommendation`;
+  recommendation(book) {
+    let message = `${book.title} add to Recommendation`;
     console.log(book);
     console.log(this.authSerice.user);
-      let saveBook = {
+    let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
       isbn: book.isbn[0],
     };
-    this.recommendationservice.saveBook(saveBook).subscribe(book=>{
+    this.recommendationservice.saveBook(saveBook).subscribe(book => {
       console.log("book saved");
       this.snackbar.open(message, '', {
-        duration:1000
+        duration: 1000
       });
     })
   }

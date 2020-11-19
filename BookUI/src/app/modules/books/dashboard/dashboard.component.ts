@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   selectedCategory: any;
   categories = ['author', 'title', 'any']
 
-  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private authSerice: AuthenticationService) { }
+  constructor(private snackbar: MatSnackBar, private fb: FormBuilder, private favouriteservice: FavouriteService, private authSerice: AuthenticationService) { }
 
   ngOnInit() {
     console.log(this.authSerice.user);
@@ -51,19 +51,19 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  favourite(book){
-    let message=`${book.title} add to favourites`;
+  favourite(book) {
+    let message = `${book.title} add to favourites`;
     console.log(book);
     console.log(this.authSerice.user);
-      let saveBook = {
+    let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
       isbn: book.isbn[0],
     };
-    this.favouriteservice.saveBook(saveBook).subscribe(book=>{
+    this.favouriteservice.saveBook(saveBook).subscribe(book => {
       console.log("book saved");
       this.snackbar.open(message, '', {
-        duration:1000
+        duration: 1000
       });
     })
   }

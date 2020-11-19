@@ -25,29 +25,29 @@ fdescribe('SearchComponent', () => {
 
   beforeEach(async(() => {
 
-    
+
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent, DashboardComponent,
-      LoginComponent, RegisterComponent,
-    FavouriteComponent ],
-      imports : [
+      declarations: [SearchComponent, DashboardComponent,
+        LoginComponent, RegisterComponent,
+        FavouriteComponent],
+      imports: [
         BrowserModule, BrowserAnimationsModule,
         AppRoutingModule,
         ReactiveFormsModule,
         HttpClientModule, MatSelectModule,
         FormsModule,
         MatCardModule,
-        MatButtonModule,MatSnackBarModule,MatDialogModule, 
-        MatDialogModule, MatInputModule,FormsModule,
-        ReactiveFormsModule, MatFormFieldModule,MatIconModule
+        MatButtonModule, MatSnackBarModule, MatDialogModule,
+        MatDialogModule, MatInputModule, FormsModule,
+        ReactiveFormsModule, MatFormFieldModule, MatIconModule
       ],
-      providers : [
+      providers: [
         FavouriteService,
         { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
         AuthenticationService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -59,17 +59,17 @@ fdescribe('SearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('able to show the searched book details', () => {
-    let searchKey : string = 'harry';
+    let searchKey: string = 'harry';
     homeservice = fixture.debugElement.injector.get(FavouriteService);
     const bookapi: any = JSON.parse(JSON.stringify({
-      json : {
-        datafound : 121,
-        datadocs : [{
-          isbn : '3543'
+      json: {
+        datafound: 121,
+        datadocs: [{
+          isbn: '3543'
         },
-      ]
+        ]
       }
     }));
     spyOn(homeservice, "getBooks").and.returnValue(of(bookapi));
@@ -78,10 +78,10 @@ fdescribe('SearchComponent', () => {
   });
 
   it('invalid search! no such book', () => {
-    let searchKey : string = 'harry';
+    let searchKey: string = 'harry';
     homeservice = fixture.debugElement.injector.get(FavouriteService);
     const bookapi: any = JSON.parse(JSON.stringify({
-      json : {
+      json: {
       }
     }));
     spyOn(homeservice, "getBooks").and.returnValue(of(bookapi));

@@ -3,13 +3,13 @@ import { AuthenticationService } from "./modules/authentication/authentication.s
 import { Router, CanActivate } from "@angular/router";
 
 @Injectable()
-export class AuthguardService implements CanActivate{
+export class AuthguardService implements CanActivate {
 
-    constructor(private auth: AuthenticationService,private route:Router){
+    constructor(private auth: AuthenticationService, private route: Router) {
     }
 
-    canActivate(){
-        if(!this.auth.isTokenExpired()){
+    canActivate() {
+        if (!this.auth.isTokenExpired()) {
             console.log('in canActivate');
             return true;
         }

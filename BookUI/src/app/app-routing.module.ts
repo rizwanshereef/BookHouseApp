@@ -10,45 +10,45 @@ import { RecommendedbyothersComponent } from './modules/books/recommendedbyother
 
 const routes: Routes = [
   {
-    path:'',
-    children:[
+    path: '',
+    children: [
       {
         path: '',
         redirectTo: '/login',
         pathMatch: 'full',
-        canActivate:[AuthguardService]
+        canActivate: [AuthguardService]
       },
       {
         path: 'dashboard',
         component: DashboardComponent,
-        canActivate : [AuthguardService]
+        canActivate: [AuthguardService]
       },
       {
         path: 'favourite',
         component: FavouriteComponent,
-        canActivate : [AuthguardService]
+        canActivate: [AuthguardService]
       },
       {
         path: 'recommendation',
         component: RecommendationComponent,
-        canActivate : [AuthguardService]
+        canActivate: [AuthguardService]
       },
 
       {
         path: 'recommendedbyothers',
         component: RecommendedbyothersComponent,
-        canActivate : [AuthguardService]
+        canActivate: [AuthguardService]
       },
 
       {
         path: 'search',
         component: SearchComponent,
-        canActivate : [AuthguardService]
+        canActivate: [AuthguardService]
       },
 
     ]
   }];
-  
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

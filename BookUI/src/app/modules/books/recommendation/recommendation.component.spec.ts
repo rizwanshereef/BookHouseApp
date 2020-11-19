@@ -16,24 +16,24 @@ describe('RecommendationComponent', () => {
   let viewservice: RecommendationService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecommendationComponent ],
-      imports :[
+      declarations: [RecommendationComponent],
+      imports: [
         RouterTestingModule,
         HttpClientModule,
         ReactiveFormsModule,
         MatSelectModule,
         FormsModule,
         MatCardModule,
-        MatButtonModule,MatSnackBarModule,MatDialogModule, 
-        MatDialogModule, MatInputModule,FormsModule,
-         MatFormFieldModule,MatIconModule
+        MatButtonModule, MatSnackBarModule, MatDialogModule,
+        MatDialogModule, MatInputModule, FormsModule,
+        MatFormFieldModule, MatIconModule
       ],
-      providers : [
+      providers: [
         RecommendationService,
         AuthenticationService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -48,13 +48,13 @@ describe('RecommendationComponent', () => {
   it('users recommendation List ', () => {
     viewservice = fixture.debugElement.injector.get(RecommendationService);
     const recommendation: any = JSON.parse(JSON.stringify({
-     book :
-       {
-         title : 'someone',
-         author : 'someone',
-         isbn : '3453',
-         key : '435354'
-       },
+      book:
+        {
+          title: 'someone',
+          author: 'someone',
+          isbn: '3453',
+          key: '435354'
+        },
     }));
     spyOn(viewservice, "getRecommendations").and.returnValue(of(recommendation));
     component.ngOnInit();
@@ -64,8 +64,8 @@ describe('RecommendationComponent', () => {
   it('when user has no Recommendations ', () => {
     viewservice = fixture.debugElement.injector.get(RecommendationService);
     const recommendation: any = JSON.parse(JSON.stringify({
-     book :[
-     ]
+      book: [
+      ]
     }));
     spyOn(viewservice, "getRecommendations").and.returnValue(of(recommendation));
     component.ngOnInit();

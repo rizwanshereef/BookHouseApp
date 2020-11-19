@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'MovieCruiser';
 
-  constructor(private auth:AuthenticationService,private routes:Router, public router:Router){
+  constructor(private auth: AuthenticationService, private routes: Router, public router: Router) {
   }
   ngOnInit() {
-    
+
   }
 
-  logout(){
+  logout() {
     this.auth.deleteToken();
     this.routes.navigate(['/login']);
   }

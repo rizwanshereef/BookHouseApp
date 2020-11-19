@@ -9,7 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {  MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon'
 import { TokenInterceptor } from 'src/app/modules/books/interceptor.service';
 import { FavouriteService } from './favourite.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,17 +21,17 @@ import { RecommendedbyothersService } from 'src/app/modules/books/recommendedbyo
 
 
 @NgModule({
-  declarations: [DashboardComponent,FavouriteComponent, RecommendationComponent, RecommendedbyothersComponent],
+  declarations: [DashboardComponent, FavouriteComponent, RecommendationComponent, RecommendedbyothersComponent],
   imports: [
     CommonModule, HttpClientModule, AppRoutingModule, MatCardModule,
-    MatButtonModule,MatSnackBarModule,MatDialogModule, 
-    MatDialogModule, MatInputModule,FormsModule,
-    ReactiveFormsModule, MatFormFieldModule,MatIconModule
+    MatButtonModule, MatSnackBarModule, MatDialogModule,
+    MatDialogModule, MatInputModule, FormsModule,
+    ReactiveFormsModule, MatFormFieldModule, MatIconModule
   ],
   // entryComponents:[MovieDialogComponent],
-  exports:[AppRoutingModule, DashboardComponent,FavouriteComponent,RecommendedbyothersComponent,RecommendationComponent
-    
+  exports: [AppRoutingModule, DashboardComponent, FavouriteComponent, RecommendedbyothersComponent, RecommendationComponent
+
   ],
-  providers:[FavouriteService,RecommendationService,RecommendedbyothersService],
+  providers: [FavouriteService, RecommendationService, RecommendedbyothersService],
 })
 export class BookModule { }

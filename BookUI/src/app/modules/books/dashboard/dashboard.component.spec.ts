@@ -13,24 +13,24 @@ fdescribe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ],
-      imports :[
+      declarations: [DashboardComponent],
+      imports: [
         RouterTestingModule,
         HttpClientModule,
         ReactiveFormsModule,
         MatSelectModule,
         FormsModule,
         MatCardModule,
-        MatButtonModule,MatSnackBarModule,MatDialogModule, 
-        MatDialogModule, MatInputModule,FormsModule,
-         MatFormFieldModule,MatIconModule
+        MatButtonModule, MatSnackBarModule, MatDialogModule,
+        MatDialogModule, MatInputModule, FormsModule,
+        MatFormFieldModule, MatIconModule
       ],
-      providers : [
+      providers: [
         FavouriteService,
         AuthenticationService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

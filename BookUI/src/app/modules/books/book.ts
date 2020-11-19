@@ -1,4 +1,4 @@
-export class book{
+export class book {
     id: number;
     title: String;
     author_name: String;
