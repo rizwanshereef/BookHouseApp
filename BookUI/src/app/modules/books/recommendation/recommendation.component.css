@@ -1,6 +1,14 @@
 h3{
     text-align: center;color:grey
 }
+h1{
+    margin-top: 0%;
+    padding-top: 0.5em;
+}
+.recommendation
+{
+    background-color: rgb(105,189,210);
+}
 .book-thumbnail{
     width:250px; height: 420px;
     margin:10px;
