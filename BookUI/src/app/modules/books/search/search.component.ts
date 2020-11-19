@@ -1,10 +1,12 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { book } from '../book';
 import { FavouriteService } from '../favourite.service';
-import { RecommendationService } from '../recommendation.service';
+
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { MatSnackBar } from '@angular/material';
+import { RecommendationService } from '../recommendation.service';
 
 @Component({
   selector: 'app-search',
@@ -32,10 +34,10 @@ export class SearchComponent implements OnInit {
   selectedCategory: any;
   categories = ['author', 'title', 'any']
   
-  constructor(private snackbar: MatSnackBar,private fb: FormBuilder,private favouriteservice: FavouriteService,private recommendationservice: RecommendationService,private authService: AuthenticationService) { }
+  constructor(private snackbar: MatSnackBar,private recommendationservice: RecommendationService,private fb: FormBuilder,private favouriteservice: FavouriteService,private authSerice: AuthenticationService) { }
 
   ngOnInit() {
-    this.favouriteservice.getFavourites(this.authService.user).subscribe(
+    this.favouriteservice.getFavourites(this.authSerice.user).subscribe(
       data => {
         console.log(data);
         if (data.length > 0) {
@@ -43,7 +45,7 @@ export class SearchComponent implements OnInit {
         }
       }
     );
-    this.recommendationservice.getRecommendations(this.authService.user).subscribe(
+    this.recommendationservice.getRecommendations(this.authSerice.user).subscribe(
       data => {
         console.log(data);
         if (data.length > 0) {
@@ -77,8 +79,7 @@ export class SearchComponent implements OnInit {
             }
           }
           this.checkAlready();
-        }
-        else {
+        } else {
           this.errorDiv = true;
           this.errorMessage = 'No such result found';
         }
@@ -98,7 +99,6 @@ export class SearchComponent implements OnInit {
           if (book.isbn[0] === bk.isbn) {
             book.isFavourite = false;
             book.isRecommendation = false;
-
           }
         }
       }
@@ -114,6 +114,7 @@ export class SearchComponent implements OnInit {
         isbn: obj.isbn,
         isFavourite: true,
         isRecommendation:true,
+
         key: obj.key,
       };
       books.push(modified);
@@ -125,7 +126,7 @@ export class SearchComponent implements OnInit {
   favourite(book){
     let message=`${book.title} add to favourites`;
     console.log(book);
-    console.log(this.authService.user);
+    console.log(this.authSerice.user);
       let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
@@ -138,11 +139,10 @@ export class SearchComponent implements OnInit {
       });
     })
   }
-  
   recommendation(book){
     let message=`${book.title} add to Recommendation`;
     console.log(book);
-    console.log(this.authService.user);
+    console.log(this.authSerice.user);
       let saveBook = {
       title: book.title,
       author_name: book.author_name[0],
@@ -155,5 +155,4 @@ export class SearchComponent implements OnInit {
       });
     })
   }
-  
 }
