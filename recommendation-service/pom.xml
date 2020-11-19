@@ -61,10 +61,11 @@
 		<version>0.9.0</version>
 		</dependency>
 		<!-- jwt dependency -->
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>
-				spring-cloud-starter-netflix-eureka-server
+				spring-cloud-starter-netflix-eureka-client
 			</artifactId>
 		</dependency>
 	</dependencies>
