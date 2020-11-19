@@ -4,7 +4,8 @@ h3{
 .book-thumbnail{
     width:250px; height: 420px;
     margin:10px;
-    background-color: rgb(79, 139, 194);
+    /* background-color: rgb(79, 139, 194); */
+    background: linear-gradient(rgba(86, 88, 88, 0.6),#3F8AA6);
     /* padding: 0; */
 }
 h4{
