@@ -1,25 +1,35 @@
-h3{
+h3
+{
     text-align: center;color:grey
 }
-.book-thumbnail{
+h1
+{
+    margin-top: 0%;
+    padding-top: 0.5em;
+}
+.book-thumbnail
+{
     width:250px; height: 420px;
-    margin:10px;
-    background-color: rgb(79, 139, 194);
+    margin:15px;
+    /* background-color: rgb(79, 139, 194); */
+    background: linear-gradient(rgba(86, 88, 88, 0.6),#3F8AA6);
     /* padding: 0; */
 }
-h4{
+h4
+{
     margin: 0px
 }
-.book-image{
+.book-image
+{
     height: 300px;
     width: 250px;
 }
-
-.book-actions{
+.book-actions
+{
     text-align: right;
 }
-
-.book-container{
+.book-container
+{
     margin:auto;
     width: 90vw;
     display: flex;
@@ -27,6 +37,7 @@ h4{
     flex-direction: row;
     height:100vh;
 }
-.search-block{
+.search-block
+{
  margin: 10px;
 }

@@ -15,24 +15,24 @@ fdescribe('FavouriteComponent', () => {
   let viewservice: FavouriteService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FavouriteComponent ],
-      imports :[
+      declarations: [FavouriteComponent],
+      imports: [
         RouterTestingModule,
         HttpClientModule,
         ReactiveFormsModule,
         MatSelectModule,
         FormsModule,
         MatCardModule,
-        MatButtonModule,MatSnackBarModule,MatDialogModule, 
-        MatDialogModule, MatInputModule,FormsModule,
-         MatFormFieldModule,MatIconModule
+        MatButtonModule, MatSnackBarModule, MatDialogModule,
+        MatDialogModule, MatInputModule, FormsModule,
+        MatFormFieldModule, MatIconModule
       ],
-      providers : [
+      providers: [
         FavouriteService,
         AuthenticationService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -48,13 +48,13 @@ fdescribe('FavouriteComponent', () => {
   it('users favourite List ', () => {
     viewservice = fixture.debugElement.injector.get(FavouriteService);
     const favourite: any = JSON.parse(JSON.stringify({
-     book :
-       {
-         title : 'someone',
-         author : 'someone',
-         isbn : '3453',
-         key : '435354'
-       },
+      book:
+        {
+          title: 'someone',
+          author: 'someone',
+          isbn: '3453',
+          key: '435354'
+        },
     }));
     spyOn(viewservice, "getFavourites").and.returnValue(of(favourite));
     component.ngOnInit();
@@ -64,8 +64,8 @@ fdescribe('FavouriteComponent', () => {
   it('when user has no favourites ', () => {
     viewservice = fixture.debugElement.injector.get(FavouriteService);
     const favourite: any = JSON.parse(JSON.stringify({
-     book :[
-     ]
+      book: [
+      ]
     }));
     spyOn(viewservice, "getFavourites").and.returnValue(of(favourite));
     component.ngOnInit();

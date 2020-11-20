@@ -3,7 +3,6 @@
     align-content: center; justify-content:center; flex-flow:column nowrap;
     align-items:center;
 }
-
 .login-input-full-width{
     width: 100%;
 }

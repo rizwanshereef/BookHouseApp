@@ -1,57 +1,57 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { decode } from "@angular/router/src/url_tree";
-export const TOKEN_NAME:string='jwt_token';
+export const TOKEN_NAME: string = 'jwt_token';
 import * as jwt_decode from 'jwt-decode';
 import { user } from "./User";
 
 
 @Injectable()
-export class AuthenticationService{
+export class AuthenticationService {
     springEndPoint: string;
-    token:string;
+    token: string;
     user: any;
-    constructor(private httpClient: HttpClient){
-        this.springEndPoint="http://localhost:8080/api/userservice";       
+    constructor(private httpClient: HttpClient) {
+        this.springEndPoint = "http://localhost:8080/api/userservice";
     }
 
-    registerUser(newUser){
-        const url=this.springEndPoint+"/register";
+    registerUser(newUser) {
+        const url = this.springEndPoint + "/register";
         console.log(newUser);
-        return this.httpClient.post(url,newUser, {responseType: 'text'});
+        return this.httpClient.post(url, newUser, { responseType: 'text' });
     }
 
-    loginUser(newUser){
-        const url=this.springEndPoint+"/login";
+    loginUser(newUser) {
+        const url = this.springEndPoint + "/login";
         console.log('newUser', newUser);
-        return this.httpClient.post(url,newUser);
-    }
-    
-    setToken(token:string){
-        return localStorage.setItem(TOKEN_NAME,token);
+        return this.httpClient.post(url, newUser);
     }
 
-    getToken(){
+    setToken(token: string) {
+        return localStorage.setItem(TOKEN_NAME, token);
+    }
+
+    getToken() {
         return localStorage.getItem(TOKEN_NAME);
     }
 
-    deleteToken(){
+    deleteToken() {
         return localStorage.removeItem(TOKEN_NAME);
     }
 
-    getTokenExpirationDate(token: string): Date{
-        const decoded=jwt_decode(token);
+    getTokenExpirationDate(token: string): Date {
+        const decoded = jwt_decode(token);
         if (decoded.exp === undefined) return null;
-        const date=new Date(0);
+        const date = new Date(0);
         date.setUTCSeconds(decoded.exp);
         return date;
     }
 
-    isTokenExpired(token?: string): boolean{
-        if(!token) token=this.getToken();
-        if(!token) return true;
-        const date =this.getTokenExpirationDate(token);
-        if (date===undefined || date===null) return false;
+    isTokenExpired(token?: string): boolean {
+        if (!token) token = this.getToken();
+        if (!token) return true;
+        const date = this.getTokenExpirationDate(token);
+        if (date === undefined || date === null) return false;
         return !(date.valueOf() > new Date().valueOf());
     }
-    }
+}

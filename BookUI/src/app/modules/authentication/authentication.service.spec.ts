@@ -6,21 +6,21 @@ import { Observable } from 'rxjs';
 
 const testConfig = {
 
-    addUser: {
-      positive: {
-        firstName: 'test',
-        lastName: 'testLast',
-        userId: 'testUser',
-        password: 'testPass'
-      }
-    },
-
-    loginUser: {
-      positive: {
-        userId: 'testUser',
-        password: 'testPass'
-      }
+  addUser: {
+    positive: {
+      firstName: 'test',
+      lastName: 'testLast',
+      userId: 'testUser',
+      password: 'testPass'
     }
+  },
+
+  loginUser: {
+    positive: {
+      userId: 'testUser',
+      password: 'testPass'
+    }
+  }
 }
 
 fdescribe('AuthenticationService', () => {
@@ -34,10 +34,10 @@ fdescribe('AuthenticationService', () => {
     authService = TestBed.get(AuthenticationService);
   });
 
-  it('should be created Authenticate Service', 
-   inject([AuthenticationService], (service: AuthenticationService) => {
-    expect(service).toBeTruthy();
-  }));
+  it('should be created Authenticate Service',
+    inject([AuthenticationService], (service: AuthenticationService) => {
+      expect(service).toBeTruthy();
+    }));
 
   it('should register user data', fakeAsync(() => {
     let data = testConfig.addUser.positive;

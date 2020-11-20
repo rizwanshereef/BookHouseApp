@@ -18,6 +18,7 @@
       </mat-card-title>
       <mat-card-subtitle>Author: {{book.author_name}}</mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-actions class="book-actions">
       <a href="http://openlibrary.org/isbn/{{book.isbn}}" class="btn btn-primary" target="_blank">Read Book..</a>
       <button mat-raised-button color="warn" (click)="Remove(book)">Remove</button>

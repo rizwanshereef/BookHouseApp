@@ -16,15 +16,15 @@ xdescribe('AppComponent', () => {
         ReactiveFormsModule,
         MatSelectModule,
         FormsModule,
-        MatSnackBarModule,MatDialogModule, 
-        MatDialogModule, MatInputModule,FormsModule,
-         MatFormFieldModule,MatIconModule
+        MatSnackBarModule, MatDialogModule,
+        MatDialogModule, MatInputModule, FormsModule,
+        MatFormFieldModule, MatIconModule
       ],
       declarations: [
-        AppComponent       
-        
+        AppComponent
+
       ],
-      providers : [
+      providers: [
         FavouriteService,
         AuthenticationService
       ]

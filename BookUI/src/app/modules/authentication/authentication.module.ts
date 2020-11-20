@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from 'src/app/modules/authentication/login/login.component';
 import { RegisterComponent } from 'src/app/modules/authentication/register/register.component'
 import { CommonModule } from '@angular/common';
@@ -20,12 +20,12 @@ import { AuthguardService } from 'src/app/authguard.service';
   ],
 
   imports: [
-      CommonModule,FormsModule,AuthenticationRoutingModule,MatButtonModule,
-      MatFormFieldModule, MatInputModule, MatIconModule, MatCardModule,
-      RouterModule,MatIconModule
+    CommonModule, FormsModule, AuthenticationRoutingModule, MatButtonModule,
+    MatFormFieldModule, MatInputModule, MatIconModule, MatCardModule,
+    RouterModule, MatIconModule
   ],
   providers: [AuthenticationService],
-  exports: [RegisterComponent,LoginComponent]
-  
+  exports: [RegisterComponent, LoginComponent]
+
 })
 export class AuthenticationModule { }

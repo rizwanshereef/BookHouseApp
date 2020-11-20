@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -31,10 +31,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BookModule } from './modules/books/book.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
-const appRoutes: Routes=[{
-  path:'',
-  redirectTo:'/login',
-  pathMatch:'full',
+const appRoutes: Routes = [{
+  path: '',
+  redirectTo: '/login',
+  pathMatch: 'full',
 }]
 @NgModule({
   declarations: [
@@ -43,22 +43,22 @@ const appRoutes: Routes=[{
     MainNavComponent
   ],
   imports: [
-    BrowserModule,AppRoutingModule,HttpClientModule,
+    BrowserModule, AppRoutingModule, HttpClientModule,
     RouterModule.forRoot(appRoutes), BrowserAnimationsModule, MatToolbarModule,
-    MatButtonModule,MatDialogModule,FormsModule,MatInputModule,
+    MatButtonModule, MatDialogModule, FormsModule, MatInputModule,
     ReactiveFormsModule, MatFormFieldModule, AuthenticationRoutingModule,
-    AuthenticationModule, MatCardModule, MatSelectModule,MatSnackBarModule,
+    AuthenticationModule, MatCardModule, MatSelectModule, MatSnackBarModule,
     MatIconModule, LayoutModule,
     MatSidenavModule, MatMenuModule,
-    MatListModule, BookModule,FlexLayoutModule
-    ],
-  providers: [AuthenticationService,AuthguardService,RecommendationService, RecommendedbyothersService, FavouriteService,
+    MatListModule, BookModule, FlexLayoutModule
+  ],
+  providers: [AuthenticationService, AuthguardService, RecommendationService, RecommendedbyothersService, FavouriteService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
     }
-  
+
   ],
   bootstrap: [AppComponent]
 })
