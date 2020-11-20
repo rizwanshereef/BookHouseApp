@@ -1,7 +1,17 @@
+.login{
+    background-color: rgb(7, 161, 110);
+}
 .login-block{
-    margin:auto; width:50%; padding: 10px; padding-top: 50px; display: flex;
-    align-content: center; justify-content:center; flex-flow:column nowrap;
-    align-items:center;
+    margin:auto; 
+    width:50%; 
+    padding: 10px; 
+    padding-top: 50px; 
+    display: flex;
+    align-content: center;
+    justify-content:center; 
+    flex-flow:column nowrap;
+    align-items:right;
+    height: 100%;
 }
 .login-input-full-width{
     width: 100%;
@@ -9,7 +19,9 @@
 #login-user{
     background-color: darkslateblue;
 }
-h3{ margin-top: 0;
+/* ; */
+h3{ 
+    margin-top: 0;
     text-align: center;
 }
 a:hover{
