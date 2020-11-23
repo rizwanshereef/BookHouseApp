@@ -21,7 +21,7 @@ public class RecommendationBookServiceImpl implements RecommendationBookService 
 	private RecommendationBookRepository recommendationbookrepository;
 
 	@Override
-	public boolean saveFavouriteBook(RecommendationBook recommendationbook) throws RecommendationBookAlreadyExistsException {
+	public boolean saveRecommendationBook(RecommendationBook recommendationbook) throws RecommendationBookAlreadyExistsException {
 		Optional<RecommendationBook> obj=recommendationbookrepository.findById(recommendationbook.getId());
 		if(obj.isPresent()){
 		throw new RecommendationBookAlreadyExistsException("Book already exists, cannot be saved");

@@ -41,7 +41,7 @@ public class RecommendationBookController {
 		try{
 			recommendationbook.setId(sequenceGeneratorService.generateSequence(RecommendationBook.SEQUENCE_NAME));
 			recommendationbook.setUserId(userId);
-			recommendationbookservice.saveFavouriteBook(recommendationbook);
+			recommendationbookservice.saveRecommendationBook(recommendationbook);
 		}
 		catch(RecommendationBookAlreadyExistsException e){
 		return new ResponseEntity<String>(e.getMessage(),HttpStatus.CONFLICT);
