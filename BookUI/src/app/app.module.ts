@@ -40,7 +40,7 @@ const appRoutes: Routes = [{
   declarations: [
     AppComponent,
     SearchComponent,
-    MainNavComponent
+    MainNavComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, HttpClientModule,

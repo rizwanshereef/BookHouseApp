@@ -1,6 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthguardService } from './authguard.service';
+import { LoginComponent } from './modules/authentication/login/login.component';
 import { DashboardComponent } from './modules/books/dashboard/dashboard.component';
 import { FavouriteComponent } from './modules/books/favourite/favourite.component';
 import { SearchComponent } from './modules/books/search/search.component';

@@ -11,7 +11,6 @@
           <img src="/assets/BookLogo.png" alt="">
         </a>
       </nav>
-
       <span class="menu-spacer"></span>
       <div fxShow="true" fxHide.lt-md>
         <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Home</button>

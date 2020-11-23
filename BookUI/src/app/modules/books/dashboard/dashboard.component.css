@@ -1,29 +1,22 @@
-h3
-{
+h3{
     text-align: center;color:grey
 }
-.book-thumbnail
-{
+.book-thumbnail{
     width:250px; height: 390px;
     margin:10px;
     padding: 2.3em;
 }
-h4
-{
+h4{
     margin: 0px
 }
-.book-image
-{
+.book-image{
     height: 300px;
     width: 250px;
 }
-
-.book-actions
-{
+.book-actions{
     text-align: right;
 }
-.book-container
-{
+.book-container{
     margin:auto;
     width: 90vw;
     display: flex;
@@ -31,8 +24,7 @@ h4
     flex-direction: row;
     background-color: rgb(0, 66, 128)
 }
-.header
-{
+.header{
     text-align: center;
     color: Red;
 }

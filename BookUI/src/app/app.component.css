@@ -1,14 +1,13 @@
-.navbar-brand img
-{
+.navbar-brand img{
   height:3em;
   width:10em;
 }
-  .example-spacer {
+.example-spacer {
     flex: 1 1 auto;
-  }
-  #menuicon{
+}
+#menuicon{
     padding-left: 0;
-  }
+}
 #icon{
   color: rgb(0, 0, 0)
 }
@@ -48,14 +47,12 @@
 #tool{
   background-color: indigo
 }
-
 .footer{
   left: 0; bottom: 0; width: 100%;  background-color:rgb(212, 212, 212);
     color:rgb(0, 0, 0); text-align: center; height:60px;
     position: fixed
 }
-
- .menu-spacer {
+.menu-spacer {
   flex: 1 1 auto;
 }
 .fa{

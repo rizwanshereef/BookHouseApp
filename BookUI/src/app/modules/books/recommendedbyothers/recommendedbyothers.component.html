@@ -20,5 +20,12 @@
     <mat-card-actions class="book-actions">
       <a href="http://openlibrary.org/isbn/{{book.isbn}}" class="btn btn-primary" target="_blank">Read Book..</a>
     </mat-card-actions>
+    <script>
+      const img = document.querySelector("img");
+      img.onclick = function () 
+      {
+        this.style.opacity = "0px";
+      }
+    </script>
   </mat-card>
 </div>

@@ -1,8 +1,9 @@
-<div class="Login">
+<div class="login">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
   <form class="login-form" #LoginForm="ngForm" (ngSubmit)="loginUser()" [style.fontsize.px]="20">
     <div class="login-block">
       <div class="row">
@@ -12,9 +13,8 @@
       </div>
       <div class="container">
         <div class="row">
-
           <mat-form-field class="login-input-full-width">
-            <input id="userId" class="inputId" matInput placeholder="User Id" [(ngModel)]="newUser.userId" name="userId" required minLength="5"
+            <input id="userId" class="inputId" matInput placeholder="User ID" [(ngModel)]="newUser.userId" name="userId" required minLength="5"
               maxlength="10" #userId="ngModel">
             <mat-icon matSuffix>
               <i class="material-icons">person</i>
@@ -29,8 +29,7 @@
           </mat-form-field>
         </div>
         <div class="row">
-          <button mat-raised-button color="primary" class="login-user" id="login-user" type="submit" (click)="loginUser()">Login</button>
-          <!-- <button class="register-button" mat-raised-button color="primary" [routerLink]="['/register']">Register</button> -->
+          <button class="login-user" id="login-user" mat-raised-button color="primary" type="submit" (click)="loginUser()">Login</button>&nbsp;
         </div>
         <div class="row">
           <h6 style="font-size:17px; font-family:initial; margin-top: 30px">New member?
